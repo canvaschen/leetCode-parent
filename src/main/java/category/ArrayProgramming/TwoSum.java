@@ -1,11 +1,5 @@
 package category.ArrayProgramming;
 
-import com.sun.tools.javac.util.ArrayUtils;
-
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * @author yzchen
  * @create 2020-01-16

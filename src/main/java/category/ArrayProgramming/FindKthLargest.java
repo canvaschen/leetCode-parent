@@ -29,20 +29,22 @@ import java.util.PriorityQueue;
  **/
 public class FindKthLargest {
 
-
-
-    /**
-     * 先排序 再直接取 ，时间复杂度 : O(NlogN)  空间复杂度 O(1)
-     *
-     * **/
-    public int findKthLargest(int[] nums, int k) {
-        Arrays.sort(nums);
-        return nums[nums.length-k];
-    }
-
-
     /**
      * 本意是用 堆 来实现
+     *
+     * 堆是理论基础，priorityQueue 是具体的实现工具
+     *
+     *
+     * PriorityQueue 默认是 小根堆
+     *
+     *
+     * add : 将指定的元素插入此优先级队列。(add 是加在树的最后面 , 优先队列会 内部重新调整 堆的结构)
+     *
+     * 调整之后 .. 最小的数据就在最上面
+     *
+     * 内部结构不一定 ... 但是 根上一定是 最小的
+     *
+     * 第 K 个最大值 ： 我只要剩 K 个值 在堆里就好了
      *
      * priorityQueue : 优先级队列  基于heap 来实现的
      *
