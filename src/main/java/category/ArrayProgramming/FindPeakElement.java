@@ -44,6 +44,9 @@ public class FindPeakElement {
         return search(nums, 0, nums.length - 1);
     }
 
+    /**
+     * 某一段数组的 起始
+     * **/
     public static int search(int[] nums, int l, int r) {
         if (l == r){
             return l;

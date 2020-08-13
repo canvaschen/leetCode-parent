@@ -48,6 +48,9 @@ public class FindKthLargest {
      *
      * priorityQueue : 优先级队列  基于heap 来实现的
      *
+     *
+     * 时间复杂度 : O(n) ?
+     *
      * **/
     public int findKthLargest1(int[] nums, int k) {
         // init heap 'the smallest element first'

@@ -1,5 +1,8 @@
 package category.ArrayProgramming;
 
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
 /**
  * @author yzchen
  * @create 2019-12-10
@@ -30,9 +33,9 @@ public class FindMin {
 
     public static void main(String[] args) {
 
-        int[] nums = {1,2,3};
+        int[] nums = {2,3,8,1,4,6};
 
-        System.out.println(findMin(nums));
+        System.out.println(findMin2(nums));
 
     }
 
@@ -73,6 +76,23 @@ public class FindMin {
             }
         }
         return -1;
+    }
+
+    /**
+     * 利用小根堆 来处理
+     *
+     * 数组全部构建成 堆之后 .. 根就是最小的值
+     *
+     * **/
+    public static int findMin2(int[] nums){
+
+        PriorityQueue<Integer> heap = new PriorityQueue<>(Comparator.comparingInt(n1 -> n1));
+
+        for(int n :nums){
+            heap.add(n);
+        }
+
+        return heap.poll();
     }
 
 

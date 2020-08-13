@@ -11,6 +11,8 @@ package category.ArrayProgramming;
  * 输入：[1,8,6,2,5,4,8,3,7]
  * <p>
  * 输出：49
+ *
+ *
  **/
 public class MaxArea {
 
@@ -20,7 +22,6 @@ public class MaxArea {
         System.out.println(maxArea(h));
 
     }
-
 
     /**
      * 一次遍历法 + 双指针法
@@ -33,6 +34,8 @@ public class MaxArea {
         while (l < r) {
             int area = Math.min(height[l], height[r]) * (r - l);
             ans = Math.max(ans, area);
+
+            // 和旁边的数比较
             if (height[l] <= height[r]) {
                 ++l;
             } else {
