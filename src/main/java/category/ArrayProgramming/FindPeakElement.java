@@ -26,15 +26,24 @@ package category.ArrayProgramming;
  * 解释: 你的函数可以返回索引 1，其峰值元素为 2；
  *      或者返回索引 5， 其峰值元素为 6。
  *
+ * 你的解法应该是 O(logN) 时间复杂度的
  *
- * 寻找峰值
+ * 寻找峰值  162
  *
  **/
 public class FindPeakElement {
 
+    /**
+     * 如果要列出所有的峰值怎么办？
+     *
+     * 有时间复杂度的要求
+     *
+     * **/
     public static void main(String[] args) {
         int[] nums = {1,2};
         System.out.println(findPeakElement(nums));
+
+
     }
 
     /**
@@ -45,9 +54,17 @@ public class FindPeakElement {
     }
 
     /**
-     * 某一段数组的 起始
+     * 递归处理 ... 一直在往一边靠
+     *
+     * 这样的话 .. 只会找到最近的一个 ... 离二分最近的一个
+     *
+     * 因为一直在往 峰值靠 ,最后就到了 峰值处 ，一个点
+     *
+     * 因为 取整 自带减一 , mid 大的时候 .. 不用 mid -1
+     *
      * **/
     public static int search(int[] nums, int l, int r) {
+
         if (l == r){
             return l;
         }
@@ -59,6 +76,16 @@ public class FindPeakElement {
             return search(nums, mid + 1, r);
         }
     }
+
+
+
+
+
+
+    /**
+     * 动态规划来处理
+     *
+     * **/
 
 
 

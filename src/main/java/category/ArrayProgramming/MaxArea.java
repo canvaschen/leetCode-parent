@@ -12,6 +12,9 @@ package category.ArrayProgramming;
  * <p>
  * 输出：49
  *
+ * 输出值为 面积
+ *
+ * 11. 盛最多水的容器
  *
  **/
 public class MaxArea {
@@ -26,6 +29,9 @@ public class MaxArea {
      * 一次遍历法 + 双指针法
      *
      * while : 暴力法 ，类似于 遍历了所有的可能性
+     *
+     * 木桶原理 .. 矮的是 短板 .. 所以是 矮的 往高的方向移动
+     *
      * **/
     public static int maxArea(int[] height) {
         int l = 0, r = height.length - 1;

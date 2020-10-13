@@ -25,7 +25,7 @@ package category.ArrayProgramming;
  * 数组中只有一个重复的数字，但它可能不止重复出现一次。
  *
  *
- * 寻找重复数
+ * 寻找重复数  287
  *
  **/
 public class FindDuplicate {

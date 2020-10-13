@@ -26,7 +26,8 @@ import java.util.PriorityQueue;
  * 输出: 0
  *
  *
- * 寻找旋转排序数组中的最小值
+ * 寻找旋转排序数组中的最小值  153
+ *
  *
  **/
 public class FindMin {
@@ -80,7 +81,6 @@ public class FindMin {
 
     /**
      * 利用小根堆 来处理
-     *
      * 数组全部构建成 堆之后 .. 根就是最小的值
      *
      * **/

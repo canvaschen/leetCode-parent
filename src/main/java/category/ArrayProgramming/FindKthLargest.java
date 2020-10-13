@@ -1,6 +1,5 @@
 package category.ArrayProgramming;
 
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -24,7 +23,7 @@ import java.util.PriorityQueue;
  * 你可以假设 k 总是有效的，且 1 ≤ k ≤ 数组的长度。
  *
  *
- * 数组中的第K个最大元素
+ * 数组中的第K个最大元素  (top K 的问题)  215 题
  *
  **/
 public class FindKthLargest {
@@ -33,9 +32,7 @@ public class FindKthLargest {
      *
      * 堆是理论基础，priorityQueue 是具体的实现工具
      *
-     *
      * PriorityQueue 默认是 小根堆
-     *
      *
      * add : 将指定的元素插入此优先级队列。(add 是加在树的最后面 , 优先队列会 内部重新调整 堆的结构)
      *
@@ -47,15 +44,29 @@ public class FindKthLargest {
      *
      * priorityQueue : 优先级队列  基于heap 来实现的
      *
+     * 时间复杂度 : O(n)
      *
-     * 时间复杂度 : O(n) ?
+     *
+     * 优先级队列是无界的，但是有一个内部容量，控制着用于存储队列元素的数组的大小
+     *
+     * Comparator 从小到大是 自然顺序
+     *
+     * 创建一个大根堆
+     * PriorityQueue <Integer> maxHeap = new PriorityQueue<Integer>(new Comparator<Integer>() {
+     *
+     *        @Override
+     *        public int compare(Integer o1, Integer o2) {
+     * 			return o2.compareTo(o1);
+     *        }
+     *
      *
      * **/
-    public int findKthLargest1(int[] nums, int k) {
+    public static int findKthLargest1(int[] nums, int k) {
         // init heap 'the smallest element first'
-        PriorityQueue<Integer> heap = new PriorityQueue<Integer>(Comparator.comparingInt(n1 -> n1));
+        // (x < y) ? -1 : ((x == y) ? 0 : 1)
+        PriorityQueue<Integer> heap = new PriorityQueue<>(Comparator.comparingInt(n1->n1));
 
-        // keep k largest elements in the heap
+        // 最小的在最上面，每次都把最小的拿走，剩下的就是大的
         for (int n: nums) {
             heap.add(n);
             if (heap.size() > k){
@@ -66,6 +77,20 @@ public class FindKthLargest {
         // output
         return heap.poll();
     }
+
+
+    public static void main(String [] args){
+        int [] aa = {10,9,2,5,3,7,101,18};
+        System.out.println(findKthLargest1(aa,3));
+    }
+
+
+
+
+
+
+
+
 
 
 

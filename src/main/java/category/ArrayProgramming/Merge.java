@@ -21,9 +21,7 @@ import java.util.List;
  * 输出: [[1,5]]
  * 解释: 区间 [1,4] 和 [4,5] 可被视为重叠区间。
  *
- *
- *
- * 合并区间
+ * 56 . 合并区间
  *
  **/
 public class Merge {
@@ -35,6 +33,7 @@ public class Merge {
 
         }
         // 先按照 第一位 元素排好序
+        // 首位的自然排序
         Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
         int i = 0;
         while (i < intervals.length) {
@@ -50,8 +49,5 @@ public class Merge {
         }
         return res.toArray(new int[0][]);
     }
-
-
-
 
 }

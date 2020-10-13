@@ -24,7 +24,7 @@ import java.util.*;
  *   [-2,  0, 0, 2]
  * ]
  *
- *  四数之和
+ *  四数之和  18
  **/
 public class FourSum {
 
@@ -45,7 +45,6 @@ public class FourSum {
         }
 
         // 排序 + 双指针法  + SET 去重
-
         Arrays.sort(nums);
         Set<String> sets = new HashSet<String>();
         for (int i = 0; i < nums.length; i++) {
@@ -66,6 +65,7 @@ public class FourSum {
             }
         }
 
+        // 数据转换 set 到  list
         Iterator it1 = sets.iterator();
         while (it1.hasNext()) {
             String[] arr = it1.next().toString().split(",");

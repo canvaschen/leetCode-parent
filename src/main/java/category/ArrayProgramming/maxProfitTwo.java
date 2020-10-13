@@ -37,12 +37,15 @@ package category.ArrayProgramming;
  * 0 <= prices[i] <= 10 ^ 4
  * <p>
  * <p>
- * 买卖股票的最佳时机 II
+ * 122. 买卖股票的最佳时机 II
  **/
 public class maxProfitTwo {
 
     /**
      * 吃掉所有的上升曲线
+     *
+     * 只要相邻的 后面一个比前面一个 大 .. 就可以作为 利润 .. 逐个利润相加
+     *
      **/
     public static int maxProfit(int[] prices) {
 
